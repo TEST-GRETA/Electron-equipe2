@@ -1,0 +1,10 @@
+[class*="col"] { 
+    margin-bottom: 20px; 
+}
+img { 
+    width: 100%; 
+}
+.container {
+    border : darkseagreen solid thin;
+    border-radius : 10px;
+}
