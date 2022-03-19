@@ -1,0 +1,19 @@
+{
+  "name": "electron-equipe2",
+  "version": "1.0.0",
+  "description": "simple start quadruple app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TEST-GRETA/Electron-equipe2.git"
+  },
+  "author": "Equipe2GRETA21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TEST-GRETA/Electron-equipe2/issues"
+  },
+  "homepage": "https://github.com/TEST-GRETA/Electron-equipe2#readme"
+}
