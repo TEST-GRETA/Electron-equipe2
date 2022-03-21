@@ -1,0 +1,26 @@
+{
+    "utilisateur":[
+       {
+          "id":1,
+          "nom":"Sommelet",
+          "prenom":"stephan",
+          "datenaissance":"20/03/1971",
+          "adresse":"10 rue de React",
+          "codepostal":"21300",
+          "numerotel":"0669661582",
+          "email":"ssommelet21@gmail.com",
+          "securitesociale":"1 69 05 49 588 157 80"
+       },
+       {
+          "id":2,
+          "nom":"Gomez",
+          "prenom":"Jérome",
+          "datenaissance":"20/03/1983",
+          "adresse":"20 rue de GRETA",
+          "codepostal":"21000",
+          "numerotel":"0669661582",
+          "email":"jerome@gmail.com",
+          "securitesociale":"1 83 05 49 588 157 80"
+       }
+    ]
+ }
