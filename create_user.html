@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="bootstrap-5.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link href="css/index.css" rel="stylesheet">
+		<link href="fontawesome/css/all.css" rel="stylesheet">
+		<title>Gestion utilisateurs</title>
+	</head>
+    <body>
+	
+        <div class="container">
+		
+			<header class="m-4">
+				<h1>Liste des utilisateurs</h1>
+			</header>
+			
+			<div class="col-lg-5 col-md-5 register-container">
+				<div class="col-lg-10 col-md-10 col-centered">
+					<p class="signup-preamble"><em>Don't have an account?</em></p>
+					<h4 class="auth-title">SIGN UP NOW</h4>
+					<!-- uiView: register -->
+					<div ui-view="register" class="ng-scope">
+						<div src="userRegisterForm" options="{
+							submitOnEnter: true
+							}" class="ng-scope ng-isolate-scope">
+							<div ref="component" class="formio-component formio-component-form  formio-component-label-hidden" id="eik802d">
+								<div novalidate="" ref="webform" class="formio-form">
+									<div ref="component" class="form-group has-feedback formio-component formio-component-textfield formio-component-name  required formio-component-label-hidden" id="e83r4ei">
+										<label class="field-required control-label--hidden"></label>
+										<div ref="element">
+											<input id="e83r4ei-name" value="" spellcheck="true" placeholder="Desired Username" lang="en" class="form-control" type="text" name="data[name]" ref="input" aria-invalid="false">
+										</div>
+										<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+									</div>
+									<div ref="component" class="form-group has-feedback formio-component formio-component-email formio-component-email  required formio-component-label-hidden" id="eg6sd2h">
+										<label class="field-required control-label--hidden"></label>
+										<div ref="element">
+											<input id="eg6sd2h-email" value="" spellcheck="true" placeholder="Email" lang="en" class="form-control" type="email" name="data[email]" ref="input" aria-invalid="false">
+										</div>
+										<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+									</div>
+									<div ref="component" class="form-group has-feedback formio-component formio-component-password formio-component-password  required formio-component-label-hidden" id="ee63ws7">
+										<label class="field-required control-label--hidden"></label>
+										<div ref="element">
+											<input id="ee63ws7-password" value="" spellcheck="true" tabindex="zack@form.io" placeholder="Password" lang="en" class="form-control" type="password" name="data[password]" ref="input" aria-invalid="false">
+										</div>
+										<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+									</div>
+									<div ref="component" class="form-group has-feedback formio-component formio-component-password formio-component-verifyPassword  required formio-component-label-hidden" id="ezhw43">
+										<label class="field-required control-label--hidden"></label>
+										<div ref="element">
+											<input id="ezhw43-verifyPassword" value="" spellcheck="true" tabindex="zack@form.io" placeholder="Verify Password" lang="en" class="form-control" type="password" name="data[verifyPassword]" ref="input" aria-invalid="false">
+										</div>
+										<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+									</div>
+									<div ref="component" class="form-group has-feedback formio-component formio-component-button formio-component-register  form-group" id="e1m63fs">
+										<button lang="en" class="btn btn-primary btn-md btn-block" type="submit" name="data[register]" ref="button" disabled="disabled">
+										REGISTER
+										</button>
+										<div ref="buttonMessageContainer">
+											<span ref="buttonMessage" class="help-block"></span>
+										</div>
+										<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+									</div>
+									<div ref="component" class="form-group has-feedback formio-component formio-component-button formio-component-registerwithgithub  form-group" id="e26f56m">
+										<button lang="en" class="btn btn-info btn-md btn-block" type="button" name="data[registerwithgithub]" ref="button">
+										<span class="fa fa-github"></span>&nbsp;
+										REGISTER WITH GITHUB
+										</button>
+										<div ref="buttonMessageContainer">
+											<span ref="buttonMessage" class="help-block"></span>
+										</div>
+										<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+									</div>
+									<div ref="component" class="formio-component formio-component-content formio-component-content" id="eq76kfx">
+										<div ref="html" class="">
+											<p><i>By clicking "Register", you agree to our </i><a href="https://form.io/terms"><i><strong>Terms of Service</strong></i></a><i>&nbsp;and </i><a href="https://form.io/privacy"><i><strong>Privacy Policy</strong></i></a><i>.</i></p>
+										</div>
+										<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+									</div>
+									<div ref="component" class="form-group has-feedback formio-component formio-component-hidden formio-component-fullName  formio-component-label-hidden" id="eaj7uwx">
+										<div ref="element">
+											<input id="eaj7uwx-fullName" value="" lang="en" class="form-control" type="hidden" name="data[fullName]" ref="input" aria-invalid="false">
+										</div>
+										<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+									</div>
+								</div>
+								<div class="formio-errors invalid-feedback" ref="messageContainer"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+        </div> <!-- Fin class container -->
+		
+		<!-- Fin class container -->
+		<!-- Bootstrap Bundle with Popper -->
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+		
+	</body>
+</html>
