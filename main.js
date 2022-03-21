@@ -77,7 +77,7 @@ const menuTemplate = [
     label: 'File',
     submenu: [
       {
-        label: "Nouvel utilisateur", accelerator: "Ctrl+N",
+        label: "Saisir un nouvel utilisateur", accelerator: "Ctrl+N",
         click() { createAddWindow(); },
       },
       isMac ? { role: 'close', accelerator: "Command+Q" } : { role: 'quit', accelerator: "Ctrl+Q" },
@@ -163,3 +163,5 @@ const menuTemplate = [
   }
 ]
 
+const menuTemplate2 = [
+]
