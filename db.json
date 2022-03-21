@@ -1,0 +1,14 @@
+{
+    "posts": [
+      {      "nom": "AUROUX",
+        "prenom": "Sébastien",
+        "email": "coucou@hotmail.fr" }
+    ],
+    "comments": [
+      {       "nom": "AUROUX",
+        "prenom": "Sébastien",
+        "email": "coucou@hotmail.fr" }
+    ],
+    "profile": {   "profile": {"nom": "AUROUX" }
+  }
+}
