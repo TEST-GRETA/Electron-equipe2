@@ -76,11 +76,11 @@ const menuTemplate = [
   {
     label: 'File',
     submenu: [
-      isMac ? { role: 'close', accelerator: "Command+Q" } : { role: 'quit', accelerator: "Ctrl+Q" },
       {
         label: "Nouvel utilisateur", accelerator: "Ctrl+N",
         click() { createAddWindow(); },
-      }
+      },
+      isMac ? { role: 'close', accelerator: "Command+Q" } : { role: 'quit', accelerator: "Ctrl+Q" },
       // {
       //   label: "Réinitialise la liste", accelerator: "Ctrl+R",
       //   click() {
