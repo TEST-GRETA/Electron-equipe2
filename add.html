@@ -1,12 +1,59 @@
-<head></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap v5.1.3 - CSS-->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Nouvel utilisateur</title>
+</head>
 <body>
-    <form>
-        <div>
-            <label>Entrer votre tâche</label>
-            <input autofocus />
-        </div>
-        <button type="submit">Ajouter</button>
-    </form>
-    <script src="./add.js">
-    </script>
+    <div class="p-3 mb-2 bg-secondary text-white">
+        <form>
+            <div class="form-group">
+              <label for="inputName">Nom</label>
+              <input type="text" class="form-control" id="inputName" placeholder=""">
+            </div>
+            <div class="form-group">
+              <label for="inputFirstName">Prénom</label>
+              <input type="text" class="form-control" id="inputFirstName" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="inputBirthday">Date de naissance</label>
+              <input type="text" class="form-control" id="inputBirthday" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="inputAdress">Adresse</label>
+              <input type="text" class="form-control" id="inputAdress" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="inputPostalCode">Code postal</label>
+              <input type="text" class="form-control" id="inputPostalCode" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="inputCity">Ville</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="inputTelephon">Ville</label>
+              <input type="text" class="form-control" id="inputTelephon" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="">
+              <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+            </div>
+            <div class="form-group">
+              <label for="inpuNbSecu">N° Sécurité sociale</label>
+              <input type="text" class="form-control" id="inputNbSecu" placeholder="">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+          </form>
+    </div>
+    <script src="add.js" ></script>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
 </body>
+</html>

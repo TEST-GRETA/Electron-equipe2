@@ -1,57 +1,53 @@
-const { app, BrowserWindow, Menu } = require("electron");
-const { ipcMain } = require("electron/main");
+const { app, BrowserWindow, Menu, ipcMain } = require('electron')
 
 // include the Node.js 'path' module at the top of your file
-const path = require("path");
+const path = require('path')
 
-const isMac = process.platform === "darwin";
+const isMac = process.platform === 'darwin'
 
 let mainWindow;
 let addWindow;
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 750,
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-    },
-  });
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
 
-  mainWindow.loadFile("index.html");
-};
+  mainWindow.loadFile('index.html')
+}
 
 app.whenReady().then(() => {
-  createWindow();
+  createWindow()
 
-  app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
-  });
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
 
-  !isMac &&
-    mainWindow.on("closed", () => {
-      console.log("la");
-      app.quit();
-    });
+  !isMac && mainWindow.on('closed', () => app.quit());
 
   const mainMenu = Menu.buildFromTemplate(menuTemplate);
   Menu.setApplicationMenu(mainMenu);
-});
+})
 
-app.on("window-all-closed", () => {
-  console.log("ici");
-  if (!isMac) app.quit();
-});
+app.on('window-all-closed', () => {
+  if (!isMac) app.quit()
+})
 
 function createAddWindow() {
   addWindow = new BrowserWindow({
-    width: 300,
-    height: 200,
-    title: "Ajouter une nouvelle tâche",
+    width: 600,
+    height: 700,
+    title: "Ajouter un nouvel utilisateur",
+    // frame: false,
+    resizable: false,
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-    },
-  });
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
   addWindow.loadURL(`file://${__dirname}/add.html`);
 }
 
@@ -62,110 +58,108 @@ ipcMain.on("todo:add", (event, todo) => {
 
 const menuTemplate = [
   // { role: 'appMenu' }
-  ...(isMac
-    ? [
-        {
-          label: app.name,
-          submenu: [
-            { role: "about" },
-            { type: "separator" },
-            { role: "services" },
-            { type: "separator" },
-            { role: "hide" },
-            { role: "hideOthers" },
-            { role: "unhide" },
-            { type: "separator" },
-            { role: "quit" },
-          ],
-        },
-      ]
-    : []),
+  ...(isMac ? [{
+    label: app.name,
+    submenu: [
+      { role: 'about' },
+      { type: 'separator' },
+      { role: 'services' },
+      { type: 'separator' },
+      { role: 'hide' },
+      { role: 'hideOthers' },
+      { role: 'unhide' },
+      { type: 'separator' },
+      { role: 'quit' }
+    ]
+  }] : []),
   // { role: 'fileMenu' }
   {
-    label: "File",
+    label: 'File',
     submenu: [
-      isMac
-        ? { role: "close", accelerator: "Command+Q" }
-        : { role: "quit", accelerator: "Ctrl+Q" },
       {
-        label: "Nouvelle tâche",
-        click() {
-          createAddWindow();
-        },
+        label: "Nouvel utilisateur", accelerator: "Ctrl+N",
+        click() { createAddWindow(); },
       },
-      {
-        label: "Réinitialiser la liste",
-        click() {
-          // mainWindow.webContents("todo:clear");
-        },
-      },
-    ],
+      isMac ? { role: 'close', accelerator: "Command+Q" } : { role: 'quit', accelerator: "Ctrl+Q" },
+      // {
+      //   label: "Réinitialise la liste", accelerator: "Ctrl+R",
+      //   click() {
+      //     mainWindow.webContents.send("todo:clear")
+      //   }
+      // }
+    ]
   },
   // { role: 'editMenu' }
   {
-    label: "Edit",
+    label: 'Edit',
     submenu: [
-      { role: "undo" },
-      { role: "redo" },
-      { type: "separator" },
-      { role: "cut" },
-      { role: "copy" },
-      { role: "paste" },
-      ...(isMac
-        ? [
-            { role: "pasteAndMatchStyle" },
-            { role: "delete" },
-            { role: "selectAll" },
-            { type: "separator" },
-            {
-              label: "Speech",
-              submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
-            },
+      { role: 'undo' },
+      { role: 'redo' },
+      { type: 'separator' },
+      { role: 'cut' },
+      { role: 'copy' },
+      { role: 'paste' },
+      ...(isMac ? [
+        { role: 'pasteAndMatchStyle' },
+        { role: 'delete' },
+        { role: 'selectAll' },
+        { type: 'separator' },
+        {
+          label: 'Speech',
+          submenu: [
+            { role: 'startSpeaking' },
+            { role: 'stopSpeaking' }
           ]
-        : [{ role: "delete" }, { type: "separator" }, { role: "selectAll" }]),
-    ],
+        }
+      ] : [
+        { role: 'delete' },
+        { type: 'separator' },
+        { role: 'selectAll' }
+      ])
+    ]
   },
   // { role: 'viewMenu' }
   {
-    label: "View",
+    label: 'View',
     submenu: [
-      { role: "reload" },
-      { role: "forceReload" },
-      { role: "toggleDevTools" },
-      { type: "separator" },
-      { role: "resetZoom" },
-      { role: "zoomIn" },
-      { role: "zoomOut" },
-      { type: "separator" },
-      { role: "togglefullscreen" },
-    ],
+      { role: 'reload' },
+      { role: 'forceReload' },
+      { role: 'toggleDevTools' },
+      { type: 'separator' },
+      { role: 'resetZoom' },
+      { role: 'zoomIn' },
+      { role: 'zoomOut' },
+      { type: 'separator' },
+      { role: 'togglefullscreen' }
+    ]
   },
   // { role: 'windowMenu' }
   {
-    label: "Window",
+    label: 'Window',
     submenu: [
-      { role: "minimize" },
-      { role: "zoom" },
-      ...(isMac
-        ? [
-            { type: "separator" },
-            { role: "front" },
-            { type: "separator" },
-            { role: "window" },
-          ]
-        : [{ role: "close" }]),
-    ],
+      { role: 'minimize' },
+      { role: 'zoom' },
+      ...(isMac ? [
+        { type: 'separator' },
+        { role: 'front' },
+        { type: 'separator' },
+        { role: 'window' }
+      ] : [
+        { role: 'close' }
+      ])
+    ]
   },
   {
-    role: "help",
+    role: 'help',
     submenu: [
       {
-        label: "Learn More",
+        label: 'Learn More',
         click: async () => {
-          const { shell } = require("electron");
-          await shell.openExternal("https://electronjs.org");
-        },
-      },
-    ],
-  },
-];
+          const { shell } = require('electron')
+          await shell.openExternal('https://electronjs.org')
+        }
+      }
+    ]
+  }
+]
+
