@@ -5,15 +5,15 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="Content-Security-Potdcy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Potdcy" content="default-src 'self'; script-src 'self'">
     <!-- Bootstrap v5.1.3 - CSS-->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <title>Gestion des utilisateurs</title>
   </head>
   <body>
     <br>
-    <h3>Gestion des utilisateurs</h3>
+    <h3>Gestion des utitdsateurs</h3>
     <br>
     <div class="container-fluid ml-3 mr-3">
         <table class="table">
@@ -44,20 +44,70 @@
                 <td>john@DOE.net</td>
                 <td>109121126251 </td>
               </tr>
-              <!--
               <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              -->
+              <script>
+              var jsonObj = {utilisateurs: [
+                {
+                  "id":1,
+                  "nom":"Sommelet",
+                  "prenom":"stephan",
+                  "datenaissance":"20/03/1971",
+                  "adresse":"10 rue de React",
+                  "codepostal":"21300",
+                  "numerotel":"06.69.66.15.82",
+                  "email":"ssommelet21@gmail.com",
+                  "securitesociale":"1 69 05 49 588 157 80"
+                },
+                {
+                  "id":2,
+                  "nom":"Gomez",
+                  "prenom":"Jérome",
+                  "datenaissance":"20/03/1983",
+                  "adresse":"20 rue de GRETA",
+                  "codepostal":"21000",
+                  "numerotel":"06.59.36.25.92",
+                  "email":"jerome@gmail.com",
+                  "securitesociale":"1 83 05 49 588 157 80"
+                },
+                {
+                  "id":3,
+                  "nom":"Doe",
+                  "prenom":"John",
+                  "datenaissance":"09/07/1987",
+                  "adresse":"40 Rue de la LIberté",
+                  "codepostal":"21000",
+                  "numerotel":"07.45.14.44.19",
+                  "email":"john@doe.com",
+                  "securitesociale":"1 87 07 21 126 147 20"
+                },
+                {
+                  "id":4,
+                  "nom":"Shiny",
+                  "prenom":"Ema",
+                  "datenaissance":"07/12/1989",
+                  "adresse":"15 Rue des Godrans",
+                  "codepostal":"21000",
+                  "numerotel":"07.54.41.34.29",
+                  "email":"ema@gmail.com",
+                  "securitesociale":"1 89 12 21 326 247 20"
+                }
+              ]};
+              var html = jsonObj.utitdsateurs.map(o => {
+                return `<tr>
+                <td>${o.id}</td>
+                <td>${o.nom}</td>
+                <td>${o.prenom}</td>
+                <td>${o.datenaissance}</td>
+                <td>${o.adresse}</td>
+                <td>${o.codepostal}</td>
+                <td>${o.numerotel}</td>
+                <td>${o.email}</td>
+                <td>${o.securitesociale}</td>
+              </tr>`
+              });
+              
+              document.getElementById("tabletdgnes").innerHTML = html.join("");
+            </script>
             </tbody>
           </table>
     </div>
@@ -65,6 +115,6 @@
     <!-- Bootstrap v5.1.3 - Bundle with Popper -->
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <!--<script src="./renderer.js"></script>-->
   </body>
 </html>

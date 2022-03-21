@@ -1,0 +1,48 @@
+{
+    "utilisateur":[
+       {
+          "id":1,
+          "nom":"Sommelet",
+          "prenom":"stephan",
+          "datenaissance":"20/03/1971",
+          "adresse":"10 rue de React",
+          "codepostal":"21300",
+          "numerotel":"06.69.66.15.82",
+          "email":"ssommelet21@gmail.com",
+          "securitesociale":"1 69 05 49 588 157 80"
+       },
+       {
+          "id":2,
+          "nom":"Gomez",
+          "prenom":"Jérome",
+          "datenaissance":"20/03/1983",
+          "adresse":"20 rue de GRETA",
+          "codepostal":"21000",
+          "numerotel":"06.59.36.25.92",
+          "email":"jerome@gmail.com",
+          "securitesociale":"1 83 05 49 588 157 80"
+       },
+       {
+         "id":3,
+         "nom":"Doe",
+         "prenom":"John",
+         "datenaissance":"09/07/1987",
+         "adresse":"40 Rue de la LIberté",
+         "codepostal":"21000",
+         "numerotel":"07.45.14.44.19",
+         "email":"john@doe.com",
+         "securitesociale":"1 87 07 21 126 147 20"
+      },
+      {
+         "id":4,
+         "nom":"Shiny",
+         "prenom":"Ema",
+         "datenaissance":"07/12/1989",
+         "adresse":"15 Rue des Godrans",
+         "codepostal":"21000",
+         "numerotel":"07.54.41.34.29",
+         "email":"ema@gmail.com",
+         "securitesociale":"1 89 12 21 326 247 20"
+      }
+    ]
+ }
