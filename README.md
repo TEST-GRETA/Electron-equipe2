@@ -1,1 +1,4 @@
-# Electron-equipe2
+# my-electron-app
+ 
+Faire 
+npm i
